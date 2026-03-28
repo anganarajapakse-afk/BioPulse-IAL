@@ -125,12 +125,15 @@ elif page == "Student Portal":
     st.header("🎓 Student Progress Tracker")
     st.write("Welcome to the Lyceum Biology Portal. Please log your study session below.")
     
+    # This 'with st.form' starts the box
     with st.form("progress_form"):
         name = st.text_input("Full Name:")
         unit_completed = st.selectbox("Which Unit did you study today?", ["Unit 1", "Unit 2", "Unit 4", "Unit 5"])
         score = st.slider("Flashcard Score (0-10):", 0, 10, 5)
         comments = st.text_area("What was the hardest concept today?")
         
-        submitted = st.form_submit_with_button("Submit Progress")
+        # This is the line we fixed:
+        submitted = st.form_submit_button("Submit Progress")
+        
         if submitted:
             st.success(f"Thank you, {name}! Dr. Rajapakse has received your update.")
