@@ -86,9 +86,36 @@ elif page == "Syllabus Checklist":
 
 # --- 4. PRACTICAL LAB ---
 elif page == "Practical Lab":
-    st.header("🔬 Core Practical Guides")
-    lab = st.selectbox("Choose Lab:", ["CP 1: Vitamin C", "CP 7: Respirometer", "CP 10: Gel Electrophoresis"])
-    if lab == "CP 1: Vitamin C":
-        st.write("Method: Titrate juice into blue DCPIP until colorless.")
+    st.header("🔬 Core Practical (CP) Guides")
+    lab = st.selectbox("Select a Practical:", [
+        "CP 1: Vitamin C Content", 
+        "CP 2: Caffeine & Daphnia",
+        "CP 3: Mitotic Index",
+        "CP 4: Tensile Strength",
+        "CP 6: Membrane Permeability",
+        "CP 7: Respirometer",
+        "CP 10: Gel Electrophoresis"
+    ])
+
+    if lab == "CP 4: Tensile Strength":
+        st.subheader("Measuring Strength of Plant Fibres")
+        st.markdown("""
+        **Method:** Use a clamp stand to suspend a plant fibre (like flax or sisal). Gradually add weights (e.g., 10g at a time) until the fibre snaps.
+        **Safety:** Place a cushioned box underneath to catch falling weights.
+        """)
+
+    elif lab == "CP 6: Membrane Permeability":
+        st.subheader("Beetroot & Temperature")
+        st.markdown("""
+        **Concept:** High temperatures denature membrane proteins and increase lipid fluidity, causing the vacuole membrane (tonoplast) to leak betalain pigment.
+        **Measurement:** Use a **Colorimeter** to measure the absorbance/transmission of the remaining liquid.
+        """)
+
+    elif lab == "CP 1: Vitamin C Content":
+        st.write("Method: Titrate fruit juice into blue DCPIP until it becomes colorless.")
+
+    elif lab == "CP 7: Respirometer":
+        st.write("Important: KOH absorbs CO2. Volume change is strictly O2 uptake.")
+
     elif lab == "CP 10: Gel Electrophoresis":
-        st.write("Logic: DNA is negative, moves toward positive Anode.")
+        st.write("Note: Smaller DNA fragments move further toward the positive anode.")
