@@ -55,3 +55,12 @@ elif choice == "Practical Lab":
         st.write("Method: Titrate juice into blue DCPIP until colorless.")
     elif lab == "CP 7: Respirometer":
         st.write("Note: KOH absorbs CO2. Liquid moves due to O2 uptake.")
+elif lab == "CP 7: Respirometer":
+        st.write("Note: KOH absorbs CO2. Liquid moves due to O2 uptake.")
+
+# --- PASTE THE NEW SECTION HERE ---
+st.sidebar.markdown("---")
+st.sidebar.subheader("👨‍🏫 About the Developer")
+st.sidebar.write("**Dr. Angana Rajapakse**")
+st.sidebar.write("PhD in Biology | IAL Expert")
+st.sidebar.info("Visit 'Hypnotic Science' on YouTube for more!")
