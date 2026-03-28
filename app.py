@@ -80,10 +80,19 @@ elif page == "Flashcards":
 # --- 3. CHECKLIST (Dynamic) ---
 elif page == "Syllabus Checklist":
     st.header("📋 Syllabus Mastery")
-    for unit, content in syllabus_data.items():
-        st.subheader(unit)
-        for topic in content["topics"]:
-            st.checkbox(topic, key=f"check_{topic}")
+    
+    # Unit 5 Section
+    st.subheader("Unit 5: Energy & Control")
+    if st.checkbox("5.3 The Nervous System"):
+        st.write("### ⚡ The Action Potential")
+        st.markdown("""
+        **1. Depolarization:** $Na^+$ channels open; $Na^+$ floods in.
+        **2. Repolarization:** $Na^+$ channels close; $K^+$ channels open, $K^+$ leaves.
+        **3. Hyperpolarization:** Membrane potential drops below -70mV (the 'undershoot').
+        **4. Resting Potential:** Restored by the $Na^+/K^+$ pump.
+        """)
+        # This describes the graph to the students
+        st.info("📈 Study Tip: In the exam, the peak of the graph is usually at +40mV.")
 
 # --- 4. PRACTICAL LAB ---
 elif page == "Practical Lab":
@@ -107,12 +116,16 @@ elif page == "Practical Lab":
 
     elif lab == "CP 2: Caffeine & Daphnia":
         st.subheader("Caffeine and Daphnia Heart Rate")
+        st.info("💡 Exam Essential: Return Daphnia to a recovery tank to ensure ethical treatment and recovery from lamp heat.")
         st.markdown("""
-        **Method:** 1. Place Daphnia on a slide with cotton wool.
-        2. Add caffeine solution of known concentration.
-        3. Count heartbeats for 15 seconds using a tally counter.
+        **Method:**
+        * Use cotton wool fibers to **restrict movement** of the Daphnia.
+        * Use a **tally counter** to record heartbeats.
         
-        **Why Daphnia?** They are transparent, so the heart is visible.
+        **Controlled Variables:**
+        * Temperature (use a heat shield).
+        * Volume of caffeine solution.
+        * Age/Size of Daphnia.
         """)
 
     elif lab == "CP 3: Mitotic Index":
