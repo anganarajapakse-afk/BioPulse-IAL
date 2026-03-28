@@ -25,6 +25,11 @@ if choice == "Tutor Chat":
 
 # --- 2. FLASHCARDS ---
 elif choice == "Flashcards":
+
+
+
+
+
     st.header("🗂️ Active Recall")
     q_list = ["What bond forms between water molecules?", "What is the role of KOH in a respirometer?", "Define Mitotic Index."]
     a_list = ["Hydrogen Bonds", "Absorbs Carbon Dioxide (CO2)", "Ratio of cells in mitosis to total cells."]
@@ -66,3 +71,5 @@ st.sidebar.write("PhD in Biology | IAL Expert")
 st.sidebar.info("Visit 'Hypnotic Science' on YouTube for more!")
 st.sidebar.image("https://i.ibb.co/3Wf4QW3/BioPulse-Logo.png", width=200)
 st.sidebar.title("BioPulse IAL")
+st.sidebar.info("Visit 'Hypnotic Science' on YouTube for more!")
+st.sidebar.image("https://i.ibb.co/3Wf4QW3/BioPulse-Logo.png", width=200)
