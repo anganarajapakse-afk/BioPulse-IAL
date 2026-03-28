@@ -88,6 +88,8 @@ elif page == "Syllabus Checklist":
 # --- 4. PRACTICAL LAB ---
 elif page == "Practical Lab":
     st.header("🔬 Core Practical (CP) Guides")
+    
+    # This creates the dropdown menu
     lab = st.selectbox("Select a Practical:", [
         "CP 1: Vitamin C Content", 
         "CP 2: Caffeine & Daphnia",
@@ -98,28 +100,44 @@ elif page == "Practical Lab":
         "CP 10: Gel Electrophoresis"
     ])
 
-    if lab == "CP 4: Tensile Strength":
-        st.subheader("Measuring Strength of Plant Fibres")
-        st.markdown("""
-        **Method:** Use a clamp stand to suspend a plant fibre (like flax or sisal). Gradually add weights (e.g., 10g at a time) until the fibre snaps.
-        **Safety:** Place a cushioned box underneath to catch falling weights.
-        """)
-
-    elif lab == "CP 6: Membrane Permeability":
-        st.subheader("Beetroot & Temperature")
-        st.markdown("""
-        **Concept:** High temperatures denature membrane proteins and increase lipid fluidity, causing the vacuole membrane (tonoplast) to leak betalain pigment.
-        **Measurement:** Use a **Colorimeter** to measure the absorbance/transmission of the remaining liquid.
-        """)
-
-    elif lab == "CP 1: Vitamin C Content":
+    # Now we tell Python what to show for EACH choice:
+    if lab == "CP 1: Vitamin C Content":
+        st.subheader("Determining Vitamin C Concentration")
         st.write("Method: Titrate fruit juice into blue DCPIP until it becomes colorless.")
 
+    elif lab == "CP 2: Caffeine & Daphnia":
+        st.subheader("Caffeine and Daphnia Heart Rate")
+        st.markdown("""
+        **Method:** 1. Place Daphnia on a slide with cotton wool.
+        2. Add caffeine solution of known concentration.
+        3. Count heartbeats for 15 seconds using a tally counter.
+        
+        **Why Daphnia?** They are transparent, so the heart is visible.
+        """)
+
+    elif lab == "CP 3: Mitotic Index":
+        st.subheader("Onion Root Tip Squash")
+        st.markdown("""
+        **Key Steps:** 1. Use **HCl** to macerate (soften) the tissue.
+        2. Use **Acetic Orcein** to stain chromosomes.
+        3. Squash firmly to get a single layer of cells.
+        """)
+
+    elif lab == "CP 4: Tensile Strength":
+        st.subheader("Strength of Plant Fibres")
+        st.write("Method: Add weights to a suspended plant fibre until it snaps.")
+
+    elif lab == "CP 6: Membrane Permeability":
+        st.subheader("Beetroot and Temperature")
+        st.write("Concept: High temp increases permeability, leaking red pigment (betalain).")
+
     elif lab == "CP 7: Respirometer":
-        st.write("Important: KOH absorbs CO2. Volume change is strictly O2 uptake.")
+        st.subheader("Measuring Respiration Rate")
+        st.write("Note: KOH absorbs CO2. Liquid moves purely due to Oxygen uptake.")
 
     elif lab == "CP 10: Gel Electrophoresis":
-        st.write("Note: Smaller DNA fragments move further toward the positive anode.")
+        st.subheader("DNA Profiling")
+        st.write("Note: Smaller DNA fragments move faster toward the positive anode.")
 # --- 5. STUDENT PORTAL ---
 elif page == "Student Portal":
     st.header("🎓 Student Progress Tracker")
