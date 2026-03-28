@@ -40,11 +40,12 @@ syllabus_data = {
 
 # --- SIDEBAR NAVIGATION ---
 st.sidebar.title("🧬 BioPulse IAL")
-page = st.sidebar.radio("Go to:", ["Tutor Chat", "Flashcards", "Syllabus Checklist", "Practical Lab"])
+
+# REPLACE YOUR OLD LINE WITH THIS ONE:
+page = st.sidebar.radio("Go to:", ["Tutor Chat", "Flashcards", "Syllabus Checklist", "Practical Lab", "Student Portal"])
+
 st.sidebar.markdown("---")
-st.sidebar.subheader("👨‍🏫 About the Developer")
-st.sidebar.write("**Dr. Angana Rajapakse**")
-st.sidebar.write("PhD in Biology | IAL Expert")
+# ... (rest of your sidebar code)
 
 # --- 1. TUTOR CHAT ---
 if page == "Tutor Chat":
@@ -119,3 +120,17 @@ elif page == "Practical Lab":
 
     elif lab == "CP 10: Gel Electrophoresis":
         st.write("Note: Smaller DNA fragments move further toward the positive anode.")
+# --- 5. STUDENT PORTAL ---
+elif page == "Student Portal":
+    st.header("🎓 Student Progress Tracker")
+    st.write("Welcome to the Lyceum Biology Portal. Please log your study session below.")
+    
+    with st.form("progress_form"):
+        name = st.text_input("Full Name:")
+        unit_completed = st.selectbox("Which Unit did you study today?", ["Unit 1", "Unit 2", "Unit 4", "Unit 5"])
+        score = st.slider("Flashcard Score (0-10):", 0, 10, 5)
+        comments = st.text_area("What was the hardest concept today?")
+        
+        submitted = st.form_submit_with_button("Submit Progress")
+        if submitted:
+            st.success(f"Thank you, {name}! Dr. Rajapakse has received your update.")
